@@ -41,7 +41,6 @@ int main()
     return 0;
 }
 
-}
 
 
 void insertAtBegining(struct node** headRef, int newData)
