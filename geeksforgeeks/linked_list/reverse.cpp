@@ -55,11 +55,17 @@ int main()
 }
 Node* reverse(Node *head)
 {
-        if(head->next == NULL)
-            return head;
-        Node *newHead;
-        newHead = reverse(head->next);
-        head->next->next = head;
-        head->next = NULL;
-        return newHead;
+    Node *center = root;
+	Node *left = NULL;
+	Node *right = NULL;
+	while(center != NULL)
+	{
+
+		right = center->next;
+		center->next = left;
+		left = center;
+		center = right;
+		
+	}
+	return left;
 }
